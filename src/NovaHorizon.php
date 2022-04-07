@@ -3,6 +3,7 @@
 use Laravel\Nova\Nova;
 use Laravel\Nova\Tool;
 use Laravel\Nova\Menu\MenuSection;
+use Illuminate\Http\Request;
 
 
 class NovaHorizon extends Tool
