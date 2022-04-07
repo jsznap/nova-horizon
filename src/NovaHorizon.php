@@ -2,6 +2,8 @@
 
 use Laravel\Nova\Nova;
 use Laravel\Nova\Tool;
+use Laravel\Nova\Menu\MenuSection;
+
 
 class NovaHorizon extends Tool
 {
@@ -17,12 +19,15 @@ class NovaHorizon extends Tool
     }
 
     /**
-     * Build the view that renders the navigation links for the tool.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function renderNavigation()
+    * Build the menu that renders the navigation links for the tool.
+    *
+    * @param  \Illuminate\Http\Request  $request
+    * @return mixed
+    */
+    public function menu(Request $request)
     {
-        return view('nova-horizon::navigation');
+        return MenuSection::make('Nova Horizon')
+            ->path('/nova-horizon')
+            ->icon('server');
     }
 }
